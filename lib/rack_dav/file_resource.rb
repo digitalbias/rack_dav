@@ -75,6 +75,7 @@ module RackDAV
       else
         file = Rack::File.new(nil)
         file.path = file_path
+        file.serving(request.env)
         response.body = file
       end
     end
